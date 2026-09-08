@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>What the internet says about you, corrected.</h1>
+    <p>Practical guides on online reputation management: fixing inaccurate search
+       results, responding to reviews, handling impersonation, and understanding
+       what appears about you and your business online.</p>
+    <a class="cta" href="https://reputationgeo.ai/en/services">See how we work</a>
+  </div>
+</section>
+
+<main class="list">
+  <div class="wrap">
+    <h2>Latest articles</h2>
+    {% for post in site.posts %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        <h3 class="card-title">{{ post.title }}</h3>
+        {%- comment -%}
+          The generated posts carry a `description` in their frontmatter - the
+          purpose-written search snippet. It reads far better here than an
+          auto-excerpt cut mid-sentence, so prefer it when present.
+        {%- endcomment -%}
+        <p class="card-excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 180 }}</p>
+        <div class="card-meta">{{ post.date | date: "%-d %B %Y" }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</main>
