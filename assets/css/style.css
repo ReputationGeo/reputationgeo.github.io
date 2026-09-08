@@ -299,3 +299,41 @@ body {
   .post { padding: 36px 0 56px; }
   .nav { gap: 16px; }
 }
+
+/* ── related guides ─────────────────────────────────────────────── */
+
+/* Every article linking to four others is what stops each post being an
+   orphan: it gives a crawler a route through the whole set and spreads
+   internal link equity instead of stranding it on one page. */
+.related {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  max-width: var(--measure);
+}
+
+.related h2 {
+  margin: 0 0 14px;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.related ul { margin: 0; padding: 0; list-style: none; }
+
+.related li { margin: 0; border-bottom: 1px solid var(--border); }
+
+.related li:last-child { border-bottom: 0; }
+
+.related a {
+  display: block;
+  padding: 12px 0;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.related a:hover { color: var(--accent); }
