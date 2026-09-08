@@ -1,0 +1,38 @@
+title: ReputationGeo
+description: >-
+  Online reputation management for search, reviews and AI answers. Practical
+  guides on correcting, removing and monitoring what appears about you and your
+  business online.
+url: "https://reputationgeo.github.io"
+baseurl: ""
+author: ReputationGeo
+
+# The github-pages gem bundles minima, so GitHub builds this server-side -
+# no local Ruby toolchain and no build workflow to maintain.
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# jekyll-seo-tag turns these into title, description, canonical and
+# Organization JSON-LD. social.links becomes sameAs: the same entity claim the
+# published posts carry, made here by the site itself.
+social:
+  name: ReputationGeo
+  links:
+    - https://reputationgeo.ai/
+    - https://dev.to/reputationgeo123
+    - https://reputationgeo.blogspot.com/
+    - https://mastodon.social/@reputationgeo
+    - https://bsky.app/profile/reputationgeo.bsky.social
+    - https://www.tumblr.com/blog/view/reputationgeo
+
+# /slug/ rather than Jekyll's dated default, because that is the URL shape the
+# git adapter reports back after committing. The default would make every live
+# URL the app records wrong.
+permalink: /:title/
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: post }
