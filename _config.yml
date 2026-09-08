@@ -1,7 +1,4 @@
 title: ReputationGeo
-# Short enough to sit inside Google's ~60-character title render. The long
-# version was being appended to the site title on every page, so the homepage
-# title ran past 180 characters and was cut off in search results.
 tagline: Online reputation management
 description: >-
   Online reputation management for search, reviews and AI answers. Guides on
@@ -10,9 +7,10 @@ url: "https://reputationgeo.github.io"
 baseurl: ""
 author: ReputationGeo
 
-# The github-pages gem bundles minima, so GitHub builds this server-side -
-# no local Ruby toolchain and no build workflow to maintain.
-theme: minima
+# No `theme:` key - the layouts in _layouts/ are the theme now. minima was
+# doing the job badly for a firm whose product is judgement: it looked like an
+# untouched default, which is the opposite of the impression these articles
+# need to make.
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -39,3 +37,8 @@ permalink: /:title/
 defaults:
   - scope: { path: "", type: "posts" }
     values: { layout: post }
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
