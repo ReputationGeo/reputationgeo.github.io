@@ -20,5 +20,43 @@ layout: default
         <a href="https://reputationgeo.ai/en/services">Talk to ReputationGeo</a>
       </div>
     </div>
+
+    {%- comment -%}
+      Related articles, built from the site's own posts.
+
+      Without this every article is an orphan: one outbound link and nothing
+      pointing between them, so a crawler reaching any single post finds no
+      route to the rest and none of them accumulate internal link equity.
+
+      Tag overlap first, since those are genuinely related; topped up with the
+      most recent so a post with unmatched tags still links somewhere rather
+      than rendering an empty box.
+    {%- endcomment -%}
+    {% assign related = '' | split: '' %}
+    {% for post in site.posts %}
+      {% if post.url != page.url %}
+        {% assign shared = 0 %}
+        {% for t in page.tags %}
+          {% if post.tags contains t %}{% assign shared = shared | plus: 1 %}{% endif %}
+        {% endfor %}
+        {% if shared > 0 %}{% assign related = related | push: post %}{% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for post in site.posts %}
+      {% if post.url != page.url and related.size < 4 %}
+        {% unless related contains post %}{% assign related = related | push: post %}{% endunless %}
+      {% endif %}
+    {% endfor %}
+
+    {% if related.size > 0 %}
+    <nav class="related">
+      <h2>Related guides</h2>
+      <ul>
+        {% for post in related limit: 4 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title | remove: ' | ReputationGeo' }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
   </div>
 </article>
