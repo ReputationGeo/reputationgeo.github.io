@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jekyll-seo-tag emits title, description, canonical, Open Graph and the
+       Organization/BlogPosting JSON-LD, including the sameAs list from
+       _config.yml. That is the entity claim, so it must stay above the CSS. -->
+  {% seo %}
+  {% feed_meta %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">ReputationGeo</a>
+      <nav class="nav">
+        <a href="{{ '/' | relative_url }}">Articles</a>
+        <a href="https://reputationgeo.ai/en/services">Services</a>
+        <a href="https://reputationgeo.ai/">reputationgeo.ai</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="site-footer">
+    <div class="wrap cols">
+      <div>
+        <strong style="color:var(--text)">ReputationGeo</strong><br>
+        Online reputation management for search, reviews and AI answers.
+      </div>
+      <div class="footer-links">
+        <a href="https://reputationgeo.ai/">Website</a>
+        <a href="https://dev.to/reputationgeo123">Dev.to</a>
+        <a href="https://mastodon.social/@reputationgeo">Mastodon</a>
+        <a href="https://bsky.app/profile/reputationgeo.bsky.social">Bluesky</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
