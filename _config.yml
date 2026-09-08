@@ -1,8 +1,11 @@
 title: ReputationGeo
+# Short enough to sit inside Google's ~60-character title render. The long
+# version was being appended to the site title on every page, so the homepage
+# title ran past 180 characters and was cut off in search results.
+tagline: Online reputation management
 description: >-
-  Online reputation management for search, reviews and AI answers. Practical
-  guides on correcting, removing and monitoring what appears about you and your
-  business online.
+  Online reputation management for search, reviews and AI answers. Guides on
+  correcting, removing and monitoring what appears about you online.
 url: "https://reputationgeo.github.io"
 baseurl: ""
 author: ReputationGeo
